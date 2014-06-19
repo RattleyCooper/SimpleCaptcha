@@ -4,6 +4,7 @@
 
 from thread import start_new_thread
 from random import randint, choice
+import base64
 try:
     from PIL import Image
     from PIL import ImageFont
@@ -165,6 +166,24 @@ class SimpleCaptcha:
         image.show()
         print 'image closed'
         return
+
+    def make_captcha_pack(self, imagedata):
+        """Takes a PIL image object and turns it into something that can
+        be sent with the socket module."""
+        mode, size, imgstring = imagedata
+        imgx, imgy = size
+        imgx, imgy = str(imgx), str(imgy)
+        imgpack = ' '.join([mode, imgx, imgy, base64.b64encode(imgstring)])
+        return imgpack
+    
+    def unpack(self, imagepack):
+        """Takes data generated with the image_pack function and recompiles
+        it into a PIL image object."""
+        options = imagepack.split()
+        mode, imgx, imgy = options[:3]
+        imgstring = ' '.join(options[3:])
+        size = int(imgx), int(imgy)
+        return Image.fromstring(mode, size, base64.b64decode(imgstring))
         
     def thread_showimage(self, image):
         """Call this function to display an PIL Image object.  You should
