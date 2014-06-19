@@ -1,9 +1,7 @@
 SimpleCaptcha
 =============
 
-A simple captcha system written in python.  Its aim is to provide an easy to use, non-web-based captcha system.
-
-Quick Notes:  I have ran in to issues sending PIL image data over sockets, even if they are string representations.  To troubleshoot this, you only need to encode the image data with base64 when you send it, and decode the base64 on the client side.  It is super simple to do with the built-in base64 module.
+A simple captcha system written in python.  Its aim is to provide an easy to use, non-web-based captcha system.  The images can be generated and embeded into GUI applications, or shown while in a command line interface.
 
 Quick Examples
 ==============
