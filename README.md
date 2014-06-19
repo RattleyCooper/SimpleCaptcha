@@ -7,10 +7,10 @@ Options
 =======
 
 * save_captcha - True or False
-font - /path/to/font.ttf
-font_size - integer
-random_fonts - [/paths/to/font.ttf]
-colored_lines - integer
-colored_line_width - integer
-black_lines = integer
+* font - /path/to/font.ttf
+* font_size - integer
+* random_fonts - [/paths/to/font.ttf]
+* colored_lines - integer
+* colored_line_width - integer
+* black_lines = integer
 
