@@ -82,7 +82,7 @@ Options
 =======
 
 Any of these options can be passed as keyword arguments when initializing the SimpleCaptcha instance to change the default behaviour.  
-Either the font or random_fonts keyword is required.
+**Either the font or random_fonts keyword argument is required on the server end.**
 
 * save_captcha - True or False - Save the captcha image for debug purposes.
 
