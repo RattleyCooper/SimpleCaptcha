@@ -83,7 +83,7 @@ Any of these options can be passed as keyword arguments when initializing the Si
 **Either the font or random_fonts keyword argument is required on the server end.**
 
 | Keyword       | Parameter             | Options                                                                   |
-| ------------- |:---------------------:| -------------------------------------------------------------------------:|
+| ------------- |:---------------------:|:------------------------------------------------------------------------- |
 |save_captcha   |True / False           |Save the captcha image for debug purposes.                                 |
 |font           |/path/to/font.ttf      |This is a required keyword argument.                                       |
 |font_size      |integer                |Sets the font size.                                                        |
