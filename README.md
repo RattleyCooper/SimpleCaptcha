@@ -69,7 +69,7 @@ Quick Examples
     
     sc = SimpleCaptcha('dummy')
     
-    # The data you receive on the client-size needs to be
+    # The data you receive on the client-side needs to be
     # unpacked and then displayed.
     
     img = sc.unpack(imagedata)
