@@ -145,7 +145,7 @@ class SimpleCaptcha:
         return self.alphanumeric
                         
     
-    def compare_question(self, captcha, answer):
+    def compare_captcha(self, captcha, answer):
         """Simple function that compares an answer to the given captcha
         string.  You could easily write your own if you want to.  It 
         returns True if the answer matches the captcha string and False
