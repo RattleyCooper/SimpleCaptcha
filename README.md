@@ -8,7 +8,7 @@ Quick Notes:  I have ran in to issues sending PIL image data over sockets, even 
 Quick Examples
 ==============
 
-Server-side:
+**Server-side:**
 
 
     # Set up SimpleCaptcha and get a random captcha.
@@ -53,7 +53,7 @@ Server-side:
     # what to do with the connection.
 
     
-Client-side:
+**Client-side:**
 
 
     # After receiving image data, we un-pack it,
