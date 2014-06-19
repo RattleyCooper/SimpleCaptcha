@@ -9,7 +9,7 @@ try:
     from PIL import ImageFont
     from PIL import ImageDraw
 except ImportError:
-    print 'PIL module was not found.'
+    print 'PIL module was not found.  Aborting.'
     exit()
 from textwrap import wrap
 
