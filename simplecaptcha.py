@@ -1,5 +1,5 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# Written by Wykleph June, 2014
+# Written by Wykleph June, 2014                                       #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 from thread import start_new_thread
