@@ -3,6 +3,8 @@ SimpleCaptcha
 
 A simple captcha system written in python.  Its aim is to provide an easy to use, non-web-based captcha system.  The images can be generated and embeded into GUI applications, or shown while in a command line interface.
 
+The images could be used on a web-page, but that is up to the user to figure out.
+
 Quick Examples
 ==============
 
