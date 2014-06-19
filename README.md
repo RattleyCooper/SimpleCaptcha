@@ -70,7 +70,7 @@ Quick Examples
     # The data you receive on the client-side needs to be
     # unpacked and then displayed.
     
-    img = sc.unpack(imagedata)
+    img = sc.unpack(imagedata)  # imagedata would be the captcha data received by the client
     img.show()
     userinput = raw_input('Answer: ')
     
