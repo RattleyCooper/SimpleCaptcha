@@ -3,14 +3,80 @@ SimpleCaptcha
 
 A simple captcha system written in python.  Its aim is to provide an easy to use, non-web-based captcha system.
 
+Quick Notes:  I have ran in to issues sending PIL image data over sockets, even if they are string representations.  To troubleshoot this, you only need to encode the image data with base64 when you send it, and decode the base64 on the client side.  It is super simple to do with the built-in base64 module.
+
 Quick Examples
 ==============
+
+Server-side:
+
+
+    # Set up SimpleCaptcha and get a random captcha.
+    
     from simplesaptcha import *
     
-    sc = SimpleCaptcha('/path/to/base/captcha/image.tiff',
-                      )
+    # The base image must be given as the first argument.
+    # Either the random_fonts or font keyword arguments
+    # are required as well.
+    
+    baseimage = '/path/to/base/captcha/image.tiff'
+    randfonts = ['/path/to/font.ttf', '/path/to/font.ttf']
+    
+    sc = SimpleCaptcha(baseimage,
+                        colored_lines=4,
+                        colored_line_width=5,
+                        random_fonts=randfonts)
+    
+    # Create SimpleCaptcha instance with required options.
+    
+    sc = SimpleCaptcha(baseimg, random_fonts=randfonts)
+    
+    # Generate a captcha image and get the answer to the 
+    # captcha for comparison purposes.
+    
+    answer, imagedata = sc.get_captcha(sc.random_alphanumeric(4))
+    
+    # Create a captcha package that can be sent to the 
+    # client.
+    
+    captcha_pack = sc.make_captcha_pack(imagedata)
+    
+    # Once the client sends their answer back, compare it
+    # to the answer that was generated with the captcha.
+    
+    solved = sc.compare_captcha(answer, given_answer)
+
+    # solved will equal True or False.  You could easily
+    # compare them without this added function.
+    
+    # After comparing the results, the server can decide
+    # what to do with the connection.
+
+    
+Client-side:
 
 
+    # After receiving image data, we un-pack it,
+    # display the image and ask for input from the 
+    # user.
+    
+    from simplecaptcha import *
+    from PIL import Image
+    
+    # Initiate the SimpleCaptcha instance with dummy data.
+    # It does not generate captchas so it doesn't need a
+    # base image or any fonts.
+    
+    sc = SimpleCaptcha('dummy')
+    
+    # The data you receive on the client-size needs to be
+    # unpacked and then displayed.
+    
+    img = sc.unpack(imagedata)
+    img.show()
+    userinput = raw_input('Answer: ')
+    
+    # Then send the input back to the server.
 
 Options
 =======
@@ -18,7 +84,7 @@ Options
 Any of these options can be passed as keyword arguments when initializing the SimpleCaptcha instance to change the default behaviour.  
 Either the font or random_fonts keyword is required.
 
-* save_captcha - True or False - Save the captcha image.  Probably a shitty option unless you really like captchas.
+* save_captcha - True or False - Save the captcha image for debug purposes.
 
 * font - /path/to/font.ttf - This is a required keyword argument.
 
