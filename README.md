@@ -5,6 +5,11 @@ A simple captcha system written in python.  Its aim is to provide an easy to use
 
 Quick Examples
 ==============
+    from simplesaptcha import *
+    
+    sc = SimpleCaptcha('/path/to/base/captcha/image.tiff',
+                      )
+
 
 
 Options
