@@ -9,13 +9,21 @@ Options
 Any of these options can be passed when initializing the SimpleCaptcha instance to change the default behaviour.
 
 * save_captcha - True or False
+
 * font - /path/to/font.ttf
+
 * font_size - integer
+
 * random_fonts - [/paths/to/font.ttf]
+
 * colored_lines - integer
+
 * colored_line_width - integer
+
 * black_lines - integer
+
 * black_line_width - integer
+
 * white_lines - integer
 * white_line_width - integer
 * white_dots - integer
