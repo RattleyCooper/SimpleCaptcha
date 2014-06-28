@@ -22,11 +22,6 @@ Quick Examples
     baseimage = '/path/to/base/captcha/image.tiff'
     randfonts = ['/path/to/font.ttf', '/path/to/font.ttf']
     
-    sc = SimpleCaptcha(baseimage,
-                        colored_lines=4,
-                        colored_line_width=5,
-                        random_fonts=randfonts)
-    
     # Create SimpleCaptcha instance with required options.
     
     sc = SimpleCaptcha(baseimg, random_fonts=randfonts)
