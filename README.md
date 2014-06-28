@@ -29,7 +29,7 @@ Quick Examples
     # Generate a captcha image and get the answer to the 
     # captcha for comparison purposes.
     
-    answer, imagedata = sc.get_captcha(sc.random_alphanumeric(4))
+    answer, imagedata = sc.get_captcha('axdf') # NOTE: User must randomly generate string to use.
     
     # Create a captcha package that can be sent to the 
     # client.
